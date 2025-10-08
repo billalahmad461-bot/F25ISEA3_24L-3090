@@ -58,33 +58,43 @@ int main() {
         bool draw{false};
         int turn_count{};
         int cell{};
-        bool is_occupied{};
-            
-        do {
+        bool **is_occupied = new bool *[3];
+        for (int i{}; i < 3; i++) {
+            is_occupied[i] = new bool[3];
+            for (int j{}; j < 3; j++) {
+                is_occupied[i][j] = false;
+            }
+        }
+
+        do
+        {
             displayGrid(grid);
             std::cout << "player " << names[turn_count % 2] << "'s turn: \n";
             std::cout << "Select the cell: ";
             std::cin >> cell;
-            if (cell < 0 || cell > 9 || is_occupied) {
+            int row{};
+            int col{};
+            cellToRowCol(row, col, cell);
+            if (cell < 0 || cell > 9 || is_occupied[row][col]) {
                 std::cout << "Invalid intput\n";
                 continue;
             }
 
             turn_count++;
 
-            int row{};
-            int col{};
-            cellToRowCol(row, col, cell);
             if (names[turn_count % 2] == names[0]) {
                 grid[row][col] = 'o';
+                is_occupied[row][col] = true;
             } else {
                 grid[row][col] = 'x';
+                is_occupied[row][col] = true;
             }
 
             win = false;
             if (win || draw) {
                 game_over = true;
             }
+
         } while (turn_count != 5);
 
         std::cout << "Want to play again yes= 1, no = 0: ";
