@@ -72,9 +72,15 @@ int main() {
 
             std::cout << guessed_word << '\n';
 
-            if (remaining_attempts == 0 || guessed_word == random_word) {
+            if (remaining_attempts == 0 ) {
+                std::cout << "Attemps = 0. Game Over!!!!!!!!!\n"
+                          << "The word was " << random_word << "\n\n";
                 game_over = true;
             }
+            if (guessed_word == random_word) {
+                std::cout << "Congratulations You guessed the word!!\n\n";
+            }
+
         } while (!game_over);
 
         std::cout << "Want to play again yes= 1, no = 0: ";
