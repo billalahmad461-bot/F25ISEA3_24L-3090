@@ -13,11 +13,19 @@ int roundOff(double count) {
 }
 
 std::string reverseString(std::string str) {
-    
+    size_t len{str.length()};
+    for (int i{}; i < len / 2; i++) {
+        str[i] = str[len - 1 - i];
+    }
+    std::cout << str << '\n';
+
+    return str;
 }
 
 bool isPalindrome(std::string str) {
-    
+    reverseString(str);
+
+    return 0;
 }
 
 int main() {
@@ -36,6 +44,7 @@ int main() {
             std::cout << "Enter the string " << i + 1 << " to check: ";
             std::getline(std::cin, strings[i]);
             std::cout << strings[i] << '\n';
+            isPalindrome(strings[i]);
         }
         
         delete[] strings; // Memory cleanup
