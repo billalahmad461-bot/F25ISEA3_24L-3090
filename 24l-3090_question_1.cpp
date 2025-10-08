@@ -4,9 +4,9 @@
 int main() {
     bool run{true};
     do {
-        std::cout << "Enter the string to check: ";
-        std::string str;
-        std::getline(std::cin, str);
+        std::cout << "How manu strings do you want to check: ";
+        std::string str_count{};
+        std::getline(std::cin, str_count);
 
         std::cout << "Want to check again yes= 1/no= 0 :";
         std::cin >> run;
