@@ -37,17 +37,19 @@ int main() {
 
     do {
         char **grid{makeGrid()};
-        displayGrid(grid);
-
+        
         bool game_over{false};
         bool win{false};
         bool draw{false};
-
+        int turn_count{};
+        
         if (games_played == 0) {
             
             do {
+                displayGrid(grid);
+                std::cout << "player " << turn_count % 2 + 1 << "'s turn: \n";
 
-
+                win = true;
                 if (win || draw) {
                     game_over = true;
                 }
