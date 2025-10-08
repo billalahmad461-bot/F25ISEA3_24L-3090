@@ -22,6 +22,19 @@ void displayGrid(char **grid) {
     }
 }
 
+void cellToRowCol(int &row, int &col, int cell) {
+    if (cell < 3) {
+        row = 0;
+        col = cell;
+    } else if (cell < 6) {
+        row = 1;
+        col = cell % 3;
+    } else {
+        row = 2;
+        col = cell % 3;
+    }
+}
+
 int main() {
     bool run{true};
 
@@ -46,25 +59,33 @@ int main() {
         int turn_count{};
         int cell{};
         bool is_occupied{};
-
-        if (games_played == 0) {
             
-            do {
-                displayGrid(grid);
-                std::cout << "player " << names[turn_count % 2] << "'s turn: \n";
-                std::cout << "Select the cell: ";
-                std::cin >> cell;
-                if (cell < 0 || cell > 9 || is_occupied) {
-                    std::cout << "Invalid intput\n";
-                } 
-                
+        do {
+            displayGrid(grid);
+            std::cout << "player " << names[turn_count % 2] << "'s turn: \n";
+            std::cout << "Select the cell: ";
+            std::cin >> cell;
+            if (cell < 0 || cell > 9 || is_occupied) {
+                std::cout << "Invalid intput\n";
+                continue;
+            }
 
-                win = true;
-                if (win || draw) {
-                    game_over = true;
-                }
-            } while (!game_over);
-        }
+            turn_count++;
+
+            int row{};
+            int col{};
+            cellToRowCol(row, col, cell);
+            if (names[turn_count % 2] == names[0]) {
+                grid[row][col] = 'o';
+            } else {
+                grid[row][col] = 'x';
+            }
+
+            win = false;
+            if (win || draw) {
+                game_over = true;
+            }
+        } while (turn_count != 5);
 
         std::cout << "Want to play again yes= 1, no = 0: ";
         std::cin >> run;
