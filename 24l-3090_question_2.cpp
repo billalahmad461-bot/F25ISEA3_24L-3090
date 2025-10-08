@@ -65,7 +65,9 @@ int main() {
 
             
 
-            game_over = true;
+            if (remaining_attempts == 0 || guessed_word == random_word) {
+                game_over = false;
+            }
         } while (!game_over);
 
         std::cout << "Want to play again yes= 1, no = 0: ";
