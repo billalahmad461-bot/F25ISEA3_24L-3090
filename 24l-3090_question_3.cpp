@@ -67,7 +67,8 @@ int main() {
 
     do {
         char **grid{makeGrid()};
-        
+        int win_count[2]{};
+
         bool game_over{false};
         bool win{false};
         bool draw{false};
@@ -105,12 +106,25 @@ int main() {
                 is_occupied[row][col] = true;
             }
 
-            win = false;
+            win = isWin(grid);
+
+            if (win) {
+                std::cout << "Congratulation player " << names[turn_count % 2] << '\n';
+                displayGrid(grid);
+                if (names[turn_count % 2] == names[0])
+                    win_count[0]++;
+                else
+                    win_count[1]++;
+
+                std::cout << "Player " << names[0] << ": " << win_count[0] << '\n';
+                std::cout << "Player " << names[1] << ": " << win_count[1] << '\n';
+            }
+
             if (win || draw) {
                 game_over = true;
             }
 
-        } while (turn_count != 5);
+        } while (!game_over);
 
         std::cout << "Want to play again yes= 1, no = 0: ";
         std::cin >> run;
