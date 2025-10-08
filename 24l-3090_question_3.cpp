@@ -13,6 +13,15 @@ char **makeGrid() {
     return grid;
 }
 
+void displayGrid(char **grid) {
+    for (int i{}; i < 3; i++) {
+        for (int j{}; j < 3; j++) {
+            std::cout << grid[i][j] << "  ";
+        }
+        std::cout << "\n\n";
+    }
+}
+
 int main() {
     bool run{true};
     
@@ -26,6 +35,7 @@ int main() {
 
     do {
         char **grid{makeGrid()};
+        displayGrid(grid);
 
         std::cout << "Want to play again yes= 1, no = 0";
         std::cin >> run;
