@@ -99,6 +99,17 @@ int main() {
 
         std::cout << "Want to play again yes= 1, no = 0: ";
         std::cin >> run;
+
+        for (int i{}; i < 3; i++) {
+            delete[] is_occupied[i];
+        }
+        delete[] is_occupied;
+
+        for (int i{}; i < 3; i++) {
+            delete[] grid[i];
+        }
+        delete[] grid;
+
     } while (run);
 
     return 0;
