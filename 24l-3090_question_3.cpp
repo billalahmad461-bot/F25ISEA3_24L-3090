@@ -45,7 +45,7 @@ int main() {
         bool draw{false};
         int turn_count{};
         int cell{};
-        
+        bool is_occupied{};
 
         if (games_played == 0) {
             
@@ -54,10 +54,10 @@ int main() {
                 std::cout << "player " << names[turn_count % 2] << "'s turn: \n";
                 std::cout << "Select the cell: ";
                 std::cin >> cell;
-                if (cell < 0 || cell > 9 ) {
+                if (cell < 0 || cell > 9 || is_occupied) {
                     std::cout << "Invalid intput\n";
                 } 
-                if (cell)
+                
 
                 win = true;
                 if (win || draw) {
