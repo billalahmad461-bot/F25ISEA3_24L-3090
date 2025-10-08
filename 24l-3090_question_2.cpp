@@ -49,21 +49,24 @@ int main() {
         std::string guessed_word(length, '_');
         int remaining_attempts{7};
         char guess{};
-        int *guess_location = new int[length]{};
+        bool correct_guess{false};
         
         do
         {
+            correct_guess = false;
+
             std::cout << guessed_word << '\n';
             std::cout << "Remaining Attempts: " << remaining_attempts << '\n';
             std::cout << "Guess your character: ";
             std::cin >> guess;
             for (int i{}; i < length; i++) {
                 if (guess == random_word[i]) {
-                    guess_location[i] = 1;
+                    guessed_word[i] = guess;
+                    correct_guess = true;
                 }
             }
 
-            
+            std::cout << guessed_word << '\n';
 
             if (remaining_attempts == 0 || guessed_word == random_word) {
                 game_over = false;
