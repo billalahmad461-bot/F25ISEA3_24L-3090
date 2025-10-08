@@ -19,10 +19,16 @@ int main() {
         double count_double{};
         std::cin >> count_double;
 
-        int count_int{roundOff(count_double)};
+        int count_int{roundOff(count_double)}; // To handle invalid inputs
 
         std::string *strings = new std::string[count_int];
 
+        for (int i{}; i < count_int; i++) {
+            std::cout << "Enter the string " << i + 1 << " to check: ";
+            std::getline(std::cin, strings[i]);
+            std::cout << strings[i] << '\n';
+        }
+        
         delete[] strings; // Memory cleanup
 
         std::cout << "Want to check again yes= 1/no= 0 :";
