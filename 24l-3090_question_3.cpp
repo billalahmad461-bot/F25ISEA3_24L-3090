@@ -96,8 +96,6 @@ int main() {
                 continue;
             }
 
-            turn_count++;
-
             if (names[turn_count % 2] == names[0]) {
                 grid[row][col] = 'o';
                 is_occupied[row][col] = true;
@@ -105,21 +103,24 @@ int main() {
                 grid[row][col] = 'x';
                 is_occupied[row][col] = true;
             }
-
+            
+            
             win = isWin(grid);
-
+            
             if (win) {
                 std::cout << "Congratulation player " << names[turn_count % 2] << '\n';
                 displayGrid(grid);
                 if (names[turn_count % 2] == names[0])
-                    win_count[0]++;
+                win_count[0]++;
                 else
-                    win_count[1]++;
-
+                win_count[1]++;
+                
                 std::cout << "Player " << names[0] << ": " << win_count[0] << '\n';
                 std::cout << "Player " << names[1] << ": " << win_count[1] << '\n';
             }
-
+            
+            turn_count++;
+            
             if (win || draw) {
                 game_over = true;
             }
