@@ -1,8 +1,12 @@
 #include<iostream>
 #include<string>
 
-int strToIntRoundOff(double count) {
-    
+int roundOff(double count) {
+    if (count <= 0) {
+        std::cout << "Error Only +ve number are allowed\n"
+                  << " Enter the number again\n";
+        return -1; // To idnetify that the number is negatvie
+    } 
 }
 
 int main() {
