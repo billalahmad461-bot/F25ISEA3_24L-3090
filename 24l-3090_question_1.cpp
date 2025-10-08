@@ -18,6 +18,7 @@ int main() {
         std::cout << "How manu strings do you want to check: ";
         double count_double{};
         std::cin >> count_double;
+        std::cin.ignore();
 
         int count_int{roundOff(count_double)}; // To handle invalid inputs
 
