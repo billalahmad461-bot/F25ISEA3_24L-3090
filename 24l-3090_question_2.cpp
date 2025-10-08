@@ -35,9 +35,13 @@ int main() {
         while (std::getline(file, line)) {
             if (current_line == random_number) {
                 random_word = line;
+                std::cout << random_word;
                 break;
             }
         }
+
+        std::cout << "Want to play again yes= 1, no = 0: ";
+        std::cin >> run;
 
     } while (run);
 
