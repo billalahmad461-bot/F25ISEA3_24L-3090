@@ -45,12 +45,26 @@ int main() {
 
         bool game_over{false};
 
-        std::string guessed_word(random_word.length(), '_');
+        size_t length{random_word.length()};
+        std::string guessed_word(length, '_');
         int remaining_attempts{7};
+        char guess{};
+        int *guess_location = new int[length]{};
 
-        do {
+        do
+        {
             std::cout << guessed_word << '\n';
             std::cout << "Remaining Attempts: " << remaining_attempts << '\n';
+            std::cout << "Guess your character: ";
+            std::cin >> guess;
+            for (int i{}; i < length; i++)
+            {
+                if (guess == random_word[i]; i++)
+                {
+                    guess_location[i] = 1;
+                }
+            }
+
             
 
             game_over = true;
