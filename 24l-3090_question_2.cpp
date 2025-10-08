@@ -16,6 +16,8 @@ int main() {
     bool run{true};
     
     do {
+        std::cout << "Welcome to Hangman Game\n";
+        
 
     } while (run);
 
