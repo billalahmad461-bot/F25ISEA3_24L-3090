@@ -1,6 +1,13 @@
 #include<iostream>
 #include<string>
 
+void showGuide() {
+    std::cout << "There are 9 cell in Tic-Tac-Toe (0 to 8)\n";
+    std::cout << "Cells are numbered from left to right until the end of rowa and than move to next row\n";
+    std::cout << "Example cell 2 means row = 0 and col = 2\n";
+    std::cout << "Where as cell 3 means row 1 and col 0\n";
+}
+
 char **makeGrid() {
     char **grid = new char *[3];
     for (int i{}; i < 3; i++) {
@@ -63,10 +70,15 @@ int main() {
     std::getline(std::cin, names[1]);
     std::cout << "Welcome player: " << names[1] << " mark: x\n";
 
-    int waist_key{};
-    std::cout << "Enter any key to continue\n";
-    std::cin >> waist_key;
-    std::cin.ignore();
+    char choice{};
+    std::cout << "Enter 'g' for guide or any key to continue\n";
+    std::cin >> choice;
+    
+    if (choice == 'g') {
+        showGuide();
+        std::cout << "Enter any key to continue\n";
+        std::cin >> choice;
+    }
 
     int win_count[2]{};
 
