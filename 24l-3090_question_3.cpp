@@ -37,11 +37,11 @@ void cellToRowCol(int &row, int &col, int cell) {
 
 bool isWin(char **grid) {
     for (int i{}; i < 3; i++) {
-        if (grid[i][0] == grid[i][1] == grid[i][2] != '_') return true;
+        if (grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2] && grid[i][2] != '_') return true;
     }
     
     for (int i{}; i < 3; i++) {
-        if (grid[0][i] == grid[1][i] == grid[2][i] != '_') return true;
+        if (grid[0][i] == grid[1][i] && grid[1][i] == grid[2][i] && grid[2][i] != '_') return true;
     }
 
     if (grid[0][0] == grid[1][1] == grid[2][2] != '_') return true;
