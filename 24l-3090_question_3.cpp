@@ -117,6 +117,14 @@ int main() {
                 std::cout << "Player " << names[0] << ": " << win_count[0] << '\n';
                 std::cout << "Player " << names[1] << ": " << win_count[1] << '\n';
             }
+
+            if (!win && turn_count == 8) draw = true;
+
+            if (draw) {
+                std::cout << "Game Draw!!!!!!!!!\n";
+                std::cout << "Player " << names[0] << ": " << win_count[0] << '\n';
+                std::cout << "Player " << names[1] << ": " << win_count[1] << '\n';
+            }
             
             turn_count++;
             
