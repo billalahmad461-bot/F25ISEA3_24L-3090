@@ -12,6 +12,14 @@ int roundOff(double count) {
     return static_cast<int>(std::round(count)); // Round to the nearest integer and return
 }
 
+std::string reverseString(std::string str) {
+    
+}
+
+bool isPalindrome(std::string str) {
+    
+}
+
 int main() {
     bool run{true};
     do {
