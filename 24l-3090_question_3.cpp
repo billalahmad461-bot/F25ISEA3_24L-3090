@@ -44,12 +44,20 @@ int main() {
         bool win{false};
         bool draw{false};
         int turn_count{};
+        int cell{};
         
+
         if (games_played == 0) {
             
             do {
                 displayGrid(grid);
                 std::cout << "player " << names[turn_count % 2] << "'s turn: \n";
+                std::cout << "Select the cell: ";
+                std::cin >> cell;
+                if (cell < 0 || cell > 9 ) {
+                    std::cout << "Invalid intput\n";
+                } 
+                if (cell)
 
                 win = true;
                 if (win || draw) {
