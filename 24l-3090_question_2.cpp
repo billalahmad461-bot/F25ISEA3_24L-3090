@@ -45,7 +45,13 @@ int main() {
 
         bool game_over{false};
 
+        std::string guessed_word(random_word.length(), '_');
+        int remaining_attempts{7};
+
         do {
+            std::cout << guessed_word << '\n';
+            std::cout << "Remaining Attempts: " << remaining_attempts << '\n';
+            
 
             game_over = true;
         } while (!game_over);
