@@ -22,7 +22,6 @@ std::string reverseString(std::string str, size_t len) {
     for (int i{}; i < len / 2; i++) {
         swap(str[i], str[len - 1 - i]);
     }
-    std::cout << str << '\n';
 
     return str;
 }
@@ -31,9 +30,13 @@ bool isPalindrome(std::string str) {
     size_t len{str.length()};
     std::string reverse{reverseString(str, len)};
 
-    
+    for (int i{}; i < len; i++) {
+        if (str != reverse) {
+            return false;
+        }
+    }
 
-    return 0;
+    return true;
 }
 
 int main() {
@@ -51,8 +54,12 @@ int main() {
         for (int i{}; i < count_int; i++) {
             std::cout << "Enter the string " << i + 1 << " to check: ";
             std::getline(std::cin, strings[i]);
-            std::cout << strings[i] << '\n';
-            isPalindrome(strings[i]);
+            bool is_p{isPalindrome(strings[i])};
+            if (is_p) {
+                std::cout << "Palindrome\n";
+            } else {
+                std::cout << "Not Palindrome\n";
+            }
         }
         
         delete[] strings; // Memory cleanup
