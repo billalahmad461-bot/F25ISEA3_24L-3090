@@ -13,6 +13,11 @@ int random_num() {
 }
 
 int main() {
+    bool run{true};
+    
+    do {
+
+    } while (run);
 
     return 0;
 }
