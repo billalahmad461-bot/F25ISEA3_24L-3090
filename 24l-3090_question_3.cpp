@@ -28,10 +28,12 @@ int main() {
     std::cout << "Enter the name of first player: ";
     std::string name1{};
     std::getline(std::cin, name1);
-
+    std::cout << "Welcome player: " << name1 << " mark: o\n";
+    
     std::cout << "Enter the name of the second player: ";
     std::string name2{};
     std::getline(std::cin, name2);
+    std::cout << "Welcome player: " << name2 << " mark: x\n";
 
     int games_played{};
 
@@ -56,7 +58,7 @@ int main() {
             } while (!game_over);
         }
 
-        std::cout << "Want to play again yes= 1, no = 0";
+        std::cout << "Want to play again yes= 1, no = 0: ";
         std::cin >> run;
     } while (run);
 
