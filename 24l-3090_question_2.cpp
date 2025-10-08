@@ -73,7 +73,7 @@ int main() {
             std::cout << guessed_word << '\n';
 
             if (remaining_attempts == 0 || guessed_word == random_word) {
-                game_over = false;
+                game_over = true;
             }
         } while (!game_over);
 
