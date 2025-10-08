@@ -91,7 +91,7 @@ int main() {
             int col{};
             cellToRowCol(row, col, cell);
             if (cell < 0 || cell >= 9 || is_occupied[row][col]) {
-                std::cout << "Invalid intput\n";
+                std::cout << "Invalid input\n";
                 continue;
             }
 
