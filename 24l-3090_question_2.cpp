@@ -32,10 +32,14 @@ int main() {
         int current_line{};
         std::string random_word;
 
+        file.clear();
+        file.seekg(0, std::ios::beg);
+
         while (std::getline(file, line)) {
+            current_line++;
             if (current_line == random_number) {
                 random_word = line;
-                std::cout << random_word;
+                std::cout << random_word << '\n';
                 break;
             }
         }
