@@ -66,6 +66,10 @@ int main() {
                 }
             }
 
+            if (!correct_guess) {
+                remaining_attempts--;
+            }
+
             std::cout << guessed_word << '\n';
 
             if (remaining_attempts == 0 || guessed_word == random_word) {
