@@ -63,6 +63,11 @@ int main() {
     std::getline(std::cin, names[1]);
     std::cout << "Welcome player: " << names[1] << " mark: x\n";
 
+    int waist_key{};
+    std::cout << "Enter any key to continue\n";
+    std::cin >> waist_key;
+    std::cin.ignore();
+
     int win_count[2]{};
 
     do {
