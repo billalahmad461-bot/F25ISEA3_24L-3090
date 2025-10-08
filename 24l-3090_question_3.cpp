@@ -95,15 +95,9 @@ int main() {
                 continue;
             }
 
-            if (names[turn_count % 2] == names[0]) {
-                grid[row][col] = 'o';
-                is_occupied[row][col] = true;
-            } else {
-                grid[row][col] = 'x';
-                is_occupied[row][col] = true;
-            }
-            
-            
+            char mark = (turn_count % 2) ? 'o' : 'x';
+            grid[row][col] = mark;
+
             win = isWin(grid);
             
             if (win) {
