@@ -63,7 +63,6 @@ int main() {
     std::getline(std::cin, names[1]);
     std::cout << "Welcome player: " << names[1] << " mark: x\n";
 
-    int games_played{};
     int win_count[2]{};
 
     do {
