@@ -24,16 +24,16 @@ void displayGrid(char **grid) {
 
 int main() {
     bool run{true};
-    
+
+    std::string names[2];
+
     std::cout << "Enter the name of first player: ";
-    std::string name1{};
-    std::getline(std::cin, name1);
-    std::cout << "Welcome player: " << name1 << " mark: o\n";
+    std::getline(std::cin, names[0]);
+    std::cout << "Welcome player: " << names[0] << " mark: o\n";
     
     std::cout << "Enter the name of the second player: ";
-    std::string name2{};
-    std::getline(std::cin, name2);
-    std::cout << "Welcome player: " << name2 << " mark: x\n";
+    std::getline(std::cin, names[1]);
+    std::cout << "Welcome player: " << names[1] << " mark: x\n";
 
     int games_played{};
 
@@ -49,7 +49,7 @@ int main() {
             
             do {
                 displayGrid(grid);
-                std::cout << "player " << turn_count % 2 + 1 << "'s turn: \n";
+                std::cout << "player " << names[turn_count % 2] << "'s turn: \n";
 
                 win = true;
                 if (win || draw) {
