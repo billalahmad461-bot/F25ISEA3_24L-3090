@@ -15,7 +15,7 @@ int roundOff(double count) {
 int main() {
     bool run{true};
     do {
-        std::cout << "How manu strings do you want to check: ";
+        std::cout << "How many strings do you want to check: ";
         double count_double{};
         std::cin >> count_double;
         std::cin.ignore();
