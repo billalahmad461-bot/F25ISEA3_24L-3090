@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<random>
+#include<fstream>
 
 int random_num() {
     std::random_device rd;
@@ -13,13 +14,21 @@ int random_num() {
 }
 
 int main() {
+    std::ifstream file("100_words_list.txt");
+    if (!file) {
+        std::cerr << "Unable to open file\n";
+        return 1;
+    }
+
+
     bool run{true};
     
     do {
         std::cout << "Welcome to Hangman Game\n";
-        
+
 
     } while (run);
 
+    file.close();
     return 0;
 }
