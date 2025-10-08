@@ -30,13 +30,7 @@ bool isPalindrome(std::string str) {
     size_t len{str.length()};
     std::string reverse{reverseString(str, len)};
 
-    for (int i{}; i < len; i++) {
-        if (str != reverse) {
-            return false;
-        }
-    }
-
-    return true;
+    return str == reverse;
 }
 
 int main() {
