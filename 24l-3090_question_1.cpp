@@ -12,10 +12,16 @@ int roundOff(double count) {
     return static_cast<int>(std::round(count)); // Round to the nearest integer and return
 }
 
+void swap(char &a, char &b) {
+    char temp{a};
+    a = b;
+    b = temp;
+}
+
 std::string reverseString(std::string str) {
     size_t len{str.length()};
     for (int i{}; i < len / 2; i++) {
-        str[i] = str[len - 1 - i];
+        swap(str[i], str[len - 1 - i]);
     }
     std::cout << str << '\n';
 
