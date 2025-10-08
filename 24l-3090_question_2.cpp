@@ -32,6 +32,12 @@ int main() {
         int current_line{};
         std::string random_word;
 
+        while (std::getline(file, line)) {
+            if (current_line == random_number) {
+                random_word = line;
+                break;
+            }
+        }
 
     } while (run);
 
