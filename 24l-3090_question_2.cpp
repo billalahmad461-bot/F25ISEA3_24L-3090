@@ -26,6 +26,12 @@ int main() {
     do {
         std::cout << "Welcome to Hangman Game\n";
 
+        int random_number{random_num()};
+
+        std::string line;
+        int current_line{};
+        std::string random_word;
+
 
     } while (run);
 
