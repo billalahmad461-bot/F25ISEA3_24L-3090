@@ -18,8 +18,7 @@ void swap(char &a, char &b) {
     b = temp;
 }
 
-std::string reverseString(std::string str) {
-    size_t len{str.length()};
+std::string reverseString(std::string str, size_t len) {
     for (int i{}; i < len / 2; i++) {
         swap(str[i], str[len - 1 - i]);
     }
@@ -29,7 +28,10 @@ std::string reverseString(std::string str) {
 }
 
 bool isPalindrome(std::string str) {
-    reverseString(str);
+    size_t len{str.length()};
+    std::string reverse{reverseString(str, len)};
+
+    
 
     return 0;
 }
