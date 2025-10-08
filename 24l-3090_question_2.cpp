@@ -39,7 +39,6 @@ int main() {
             current_line++;
             if (current_line == random_number) {
                 random_word = line;
-                std::cout << random_word << '\n';
                 break;
             }
         }
