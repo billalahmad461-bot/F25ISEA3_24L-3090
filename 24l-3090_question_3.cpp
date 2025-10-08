@@ -51,7 +51,7 @@ int main() {
                 if (win || draw) {
                     game_over = true;
                 }
-            } while (!game_over)
+            } while (!game_over);
         }
 
         std::cout << "Want to play again yes= 1, no = 0";
