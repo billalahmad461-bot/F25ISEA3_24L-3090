@@ -91,7 +91,7 @@ int main() {
             int row{};
             int col{};
             cellToRowCol(row, col, cell);
-            if (cell < 0 || cell > 9 || is_occupied[row][col]) {
+            if (cell < 0 || cell >= 9 || is_occupied[row][col]) {
                 std::cout << "Invalid intput\n";
                 continue;
             }
