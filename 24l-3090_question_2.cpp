@@ -43,6 +43,13 @@ int main() {
             }
         }
 
+        bool game_over{false};
+
+        do {
+
+            game_over = true;
+        } while (!game_over);
+
         std::cout << "Want to play again yes= 1, no = 0: ";
         std::cin >> run;
 
