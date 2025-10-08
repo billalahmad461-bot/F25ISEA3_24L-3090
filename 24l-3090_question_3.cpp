@@ -44,8 +44,8 @@ bool isWin(char **grid) {
         if (grid[0][i] == grid[1][i] && grid[1][i] == grid[2][i] && grid[2][i] != '_') return true;
     }
 
-    if (grid[0][0] == grid[1][1] == grid[2][2] != '_') return true;
-    if (grid[0][2] == grid[1][1] == grid[2][0] != '_') return true;
+    if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2] && grid[2][2] != '_') return true;
+    if (grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0] && grid[2][0] != '_') return true;
 
     return false;
 } 
@@ -64,10 +64,10 @@ int main() {
     std::cout << "Welcome player: " << names[1] << " mark: x\n";
 
     int games_played{};
+    int win_count[2]{};
 
     do {
         char **grid{makeGrid()};
-        int win_count[2]{};
 
         bool game_over{false};
         bool win{false};
