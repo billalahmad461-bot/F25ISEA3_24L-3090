@@ -50,17 +50,15 @@ int main() {
         int remaining_attempts{7};
         char guess{};
         int *guess_location = new int[length]{};
-
+        
         do
         {
             std::cout << guessed_word << '\n';
             std::cout << "Remaining Attempts: " << remaining_attempts << '\n';
             std::cout << "Guess your character: ";
             std::cin >> guess;
-            for (int i{}; i < length; i++)
-            {
-                if (guess == random_word[i]; i++)
-                {
+            for (int i{}; i < length; i++) {
+                if (guess == random_word[i]) {
                     guess_location[i] = 1;
                 }
             }
