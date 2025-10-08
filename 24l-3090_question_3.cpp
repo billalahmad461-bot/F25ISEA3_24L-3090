@@ -33,9 +33,26 @@ int main() {
     std::string name2{};
     std::getline(std::cin, name2);
 
+    int games_played{};
+
     do {
         char **grid{makeGrid()};
         displayGrid(grid);
+
+        bool game_over{false};
+        bool win{false};
+        bool draw{false};
+
+        if (games_played == 0) {
+            
+            do {
+
+
+                if (win || draw) {
+                    game_over = true;
+                }
+            } while (!game_over)
+        }
 
         std::cout << "Want to play again yes= 1, no = 0";
         std::cin >> run;
