@@ -79,6 +79,7 @@ int main() {
             }
             if (guessed_word == random_word) {
                 std::cout << "Congratulations You guessed the word!!\n\n";
+                game_over = true;
             }
 
         } while (!game_over);
