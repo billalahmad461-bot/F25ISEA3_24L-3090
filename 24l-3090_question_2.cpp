@@ -39,7 +39,7 @@ int main() {
             current_line++;
             if (current_line == random_number) {
                 random_word = line;
-                break;
+                break; 
             }
         }
 
